@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About MMQ | MMQ</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+<div id="header" class="clearfix">
+  <div id="logo-wrapper">
+    <h1 id="site-name"><a href="index.html" title="Home"><span>MMQ</span></a></h1>
+    <div id="site-slogan">for meat quality determination</div>
+  </div>
+  <nav id="menu">
+    <form class="search-block-form container-inline" action="search.html" method="get" id="search">
+      <div class="form-item">
+        <label for="edit-keys">Search this site:</label>
+        <input title="Enter the terms you wish to search for." type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
+      </div>
+      <input type="submit" id="edit-submit" value="Search" class="form-submit" />
+    </form>
+  </nav>
+</div>
+<div class="with-both-sidebars">
+  <div class="layout-columns clearfix">
+    <div class="region-sidebar-first"><div>
+      <nav id="block-mmq">
+        <h2>MMQ</h2>
+        <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html" class="active">About</a></li>
+<li><a href="porkms.html">PorkMS</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="imaging.html">Taking images</a></li>
+<li><a href="help.html">Help</a></li>
+</ul>
+      </nav>
+      <nav id="block-manual">
+        <h2>Manual</h2>
+        <ul>
+<li><a href="login.html">Log in</a></li>
+<li><a href="parameters.html">Parameters</a></li>
+<li><a href="calibration.html">Calibration</a></li>
+<li><a href="measure.html">Measurement</a></li>
+<li><a href="export.html">Export</a></li>
+</ul>
+      </nav>
+      <nav id="block-species">
+        <h2>Species</h2>
+        <ul>
+<li class="leaf"><a href="pig.html">Pig (1)</a></li>
+<li class="leaf"><a href="cattle.html">Cattle (1)</a></li>
+<li class="leaf"><a href="sheep.html">Sheep (1)</a></li>
+<li class="leaf"><a href="chicken.html">Chicken (1)</a></li>
+</ul>
+      </nav>
+      <div id="block-user">
+        <h2 class="title">User login</h2>
+        <div class="content">
+          <form class="user-login-form" id="user-login-form" action="#" method="post">
+            <div class="form-item">
+              <label for="edit-name" class="form-required">Username</label><br />
+              <input class="form-text" type="text" id="edit-name" name="name" size="15" maxlength="60" required="required" />
+            </div>
+            <div class="form-item">
+              <label for="edit-pass" class="form-required">Password</label><br />
+              <input class="form-text" type="password" id="edit-pass" name="pass" size="15" maxlength="128" required="required" />
+            </div>
+            <div class="form-actions">
+              <input type="submit" value="Log in" class="form-submit" />
+            </div>
+          </form>
+          <ul class="sidebar-extra"><li><a href="login.html#recover" title="How password recovery works in the desktop software.">Reset your password</a></li></ul>
+          <div id="login-msg"></div>
+        </div>
+      </div>
+    </div></div>
+    <div id="main">
+      
+      <div class="inner">
+        <a id="main-content"></a>
+        <div class="breadcrumb"><a href="index.html">Home</a></div>
+        <h1><span>About MMQ</span></h1>
+<div class="page-body">
+
+<p>MMQ is a Windows program for meat colour, marbling and intramuscular fat (IMF). Its English name is Multifunctional Meat Quality Determination Software. The window title identifies Version 1, © 2025 by NJAU (Nanjing Agricultural University).</p>
+<p>Pork is eaten widely, and its colour and eating quality matter to buyers. Intramuscular fat is one of the traits that affects pork flavour. Laboratory fat extraction, such as Soxhlet extraction, is done after slaughter and does not give breeders a quick measurement they can use while selecting stock. The desktop program is meant to score colour, marbling and IMF in one workflow.</p>
+<p>The people named in the software manual are Ji Qiunan, Liu Zedan, Wan Ziming, Zhao Sanqin and Wu Wangjun. The stated user is an enterprise.</p>
+<div class="fig-block"><img src="images/main.png" alt="MMQ main window" /><div class="caption">Fig. 7. Main window of MMQ.</div></div>
+<h2>Desktop program and PorkMS</h2>
+<p>Two tools are documented here. They both look at meat cross-sections, and they do not share one score scale.</p>
+<table class="grade">
+  <tr><th>Tool</th><th>Where it runs</th><th>What it reports</th></tr>
+  <tr class="odd"><td>MMQ</td><td>Windows desktop</td><td>L*, a*, b*, a meat-colour score, a marbling score and IMF. The information table labels the colour and marbling scores as NPPC 6-point scores. The default model is NPPC.</td></tr>
+  <tr class="even"><td><a href="porkms.html">PorkMS</a></td><td>Web browser</td><td>Fat area ratio and a marbling grade from 1 to 10+. No account is required. Analysis stays in the browser.</td></tr>
+</table>
+<p>Do not copy an NPPC 6-point score into a PorkMS grade, or the reverse. Read the page for the program you are actually using.</p>
+<p><span class="links-prefix">» </span><a href="help.html">How to use MMQ</a></p>
+
+</div>
+      </div>
+    </div>
+    <div class="region-sidebar-second"><div>
+      <div id="block-figures">
+        <h2 class="title">Interface figures</h2>
+        <div class="content">
+          <div class="views-row"><div class="views-field-title"><a href="login.html">Log-in window</a></div><a href="login.html"><img src="images/login.png" width="220" alt="Log-in window" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="parameters.html">Main window</a></div><a href="parameters.html"><img src="images/main.png" width="220" alt="Main window" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="calibration.html">Colour calibration</a></div><a href="calibration.html"><img src="images/cal.png" width="220" alt="Colour calibration" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="measure.html">Marbling and fat</a></div><a href="measure.html"><img src="images/marbling.png" width="220" alt="Marbling and intramuscular fat" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="export.html">Exported table</a></div><a href="export.html"><img src="images/csv.png" width="220" alt="Exported CSV" /></a></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+<div id="footer">
+  <p style="text-align:center;">Multifunctional Meat Quality Determination Software (MMQ), Version 1.0. © 2025 Nanjing Agricultural University.</p>
+  <p style="text-align:center;">Developers, as named in the software manual: Ji Qiunan, Liu Zedan, Wan Ziming, Zhao Sanqin and Wu Wangjun.</p>
+  <p style="text-align:center;">Online marbling measurement is documented from <a href="https://yuwan589.github.io/PorkMS/">PorkMS</a>.</p>
+</div>
+<script src="js/site.js"></script>
+</body>
+</html>

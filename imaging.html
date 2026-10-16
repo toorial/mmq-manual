@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Taking images | MMQ</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+<div id="header" class="clearfix">
+  <div id="logo-wrapper">
+    <h1 id="site-name"><a href="index.html" title="Home"><span>MMQ</span></a></h1>
+    <div id="site-slogan">for meat quality determination</div>
+  </div>
+  <nav id="menu">
+    <form class="search-block-form container-inline" action="search.html" method="get" id="search">
+      <div class="form-item">
+        <label for="edit-keys">Search this site:</label>
+        <input title="Enter the terms you wish to search for." type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
+      </div>
+      <input type="submit" id="edit-submit" value="Search" class="form-submit" />
+    </form>
+  </nav>
+</div>
+<div class="with-both-sidebars">
+  <div class="layout-columns clearfix">
+    <div class="region-sidebar-first"><div>
+      <nav id="block-mmq">
+        <h2>MMQ</h2>
+        <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="porkms.html">PorkMS</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="imaging.html" class="active">Taking images</a></li>
+<li><a href="help.html">Help</a></li>
+</ul>
+      </nav>
+      <nav id="block-manual">
+        <h2>Manual</h2>
+        <ul>
+<li><a href="login.html">Log in</a></li>
+<li><a href="parameters.html">Parameters</a></li>
+<li><a href="calibration.html">Calibration</a></li>
+<li><a href="measure.html">Measurement</a></li>
+<li><a href="export.html">Export</a></li>
+</ul>
+      </nav>
+      <nav id="block-species">
+        <h2>Species</h2>
+        <ul>
+<li class="leaf"><a href="pig.html">Pig (1)</a></li>
+<li class="leaf"><a href="cattle.html">Cattle (1)</a></li>
+<li class="leaf"><a href="sheep.html">Sheep (1)</a></li>
+<li class="leaf"><a href="chicken.html">Chicken (1)</a></li>
+</ul>
+      </nav>
+      <div id="block-user">
+        <h2 class="title">User login</h2>
+        <div class="content">
+          <form class="user-login-form" id="user-login-form" action="#" method="post">
+            <div class="form-item">
+              <label for="edit-name" class="form-required">Username</label><br />
+              <input class="form-text" type="text" id="edit-name" name="name" size="15" maxlength="60" required="required" />
+            </div>
+            <div class="form-item">
+              <label for="edit-pass" class="form-required">Password</label><br />
+              <input class="form-text" type="password" id="edit-pass" name="pass" size="15" maxlength="128" required="required" />
+            </div>
+            <div class="form-actions">
+              <input type="submit" value="Log in" class="form-submit" />
+            </div>
+          </form>
+          <ul class="sidebar-extra"><li><a href="login.html#recover" title="How password recovery works in the desktop software.">Reset your password</a></li></ul>
+          <div id="login-msg"></div>
+        </div>
+      </div>
+    </div></div>
+    <div id="main">
+      
+      <div class="inner">
+        <a id="main-content"></a>
+        <div class="breadcrumb"><a href="index.html">Home</a></div>
+        <h1><span>Taking images</span></h1>
+<div class="page-body">
+
+<p>MMQ measures images that have already been stored in folders. One folder should hold the images of one animal. The program reads the folder name into the animal list. Put the animal ID in the information table; that ID is the first column of the exported CSV file.</p>
+<h2>What to prepare</h2>
+<ul>
+  <li>Use a cross-section image of the meat sample. The program removes colours outside the meat before measurement and keeps the processed copies in the <b>measure_image</b> folder next to the executable.</li>
+  <li>For ordinary measurement the main window shows the first three images in the folder. If the folder contains more than three images, the program shows a notice. See <a href="measure.html">Measurement</a>.</li>
+  <li>Colour calibration needs a folder with at least two images. A folder with only one image is rejected. See <a href="calibration.html">Calibration</a>.</li>
+  <li>Collect a 45-minute sample, a 24-hour sample, or both. Marbling score and intramuscular fat are available only when the measurement time is set to the 24-hour sample.</li>
+  <li>PorkMS, in the browser, accepts JPG and PNG. You can drop a file onto the upload area. See <a href="porkms.html">PorkMS</a>.</li>
+</ul>
+<hr />
+<table class="helpshot"><tr><td>
+<img class="floatshot" src="images/menu-file.png" alt="File menu" />
+<b>Choose the species and open a template</b><br />
+Use <b>Menu File</b>. The species defaults to pig. Choose cattle, sheep or chicken here when that is the sample. Then use <b>New information template</b>. A template picker opens. Saved templates are listed from <b>D:\Meat_Quality_Templates</b>.
+</td></tr></table>
+<div class="fig-block"><img src="images/template-pick.png" alt="Template picker" /><div class="caption">Fig. 13. Template picker.</div></div>
+<table class="helpshot"><tr><td>
+<img class="floatshot" src="images/template.png" alt="Information template" />
+<b>Fill in the template</b><br />
+If the breed you need is not in the list, type it. <b>Save</b> stores the template so it appears in the picker later. <b>Confirm</b> also stores it and sends the fields into the animal information table on the main window.
+</td></tr></table>
+<div class="fig-block"><img src="images/info.png" alt="Animal information table" /><div class="caption">Fig. 15. Animal information table after a template is applied.</div></div>
+<p>Fields on the animal information table:</p>
+<table class="fields">
+  <tr><th>Field</th><th>Role</th></tr>
+  <tr><td>ID</td><td>Animal identifier. Written as the first column of the CSV file (the ear-tag / ID column described in the manual).</td></tr>
+  <tr><td>Slaughterhouse</td><td>Plant or laboratory name.</td></tr>
+  <tr><td>Operator 1, 2 and 3</td><td>People who made the measurement.</td></tr>
+  <tr><td>Scanner brand and model</td><td>Device used to capture the image.</td></tr>
+  <tr><td>Breeding company</td><td>Farm or company that raised the animal.</td></tr>
+  <tr><td>Breed</td><td>Breed name. Free text is allowed.</td></tr>
+  <tr><td>Sex</td><td>Sex of the animal.</td></tr>
+  <tr><td>Live weight (kg)</td><td>Body weight at measurement.</td></tr>
+  <tr><td>L*, a*, b* (general, 45-minute sample)</td><td>Reference colour values for the 45-minute sample.</td></tr>
+  <tr><td>Meat colour score (NPPC, 6-point)</td><td>Reference colour score on the NPPC 6-point scale.</td></tr>
+  <tr><td>Marbling score (NPPC, 6-point)</td><td>Reference marbling score on the NPPC 6-point scale.</td></tr>
+  <tr><td>Intramuscular fat (%)</td><td>Reference IMF on the general scale.</td></tr>
+</table>
+<hr />
+<table class="helpshot"><tr><td>
+<img class="floatshot" src="images/folder.png" alt="Folder picker" />
+<b>Import image folders</b><br />
+Use <b>Menu Tools &gt; Import folder</b>. Select one folder, or hold Ctrl and select several, then confirm. The folders appear in the animal list. The status bar counts imported animals and imported images.
+</td></tr></table>
+<div class="fig-block"><img src="images/list.png" alt="Animal list" /><div class="caption">Fig. 17. Animal list after folders have been imported.</div></div>
+<table class="helpshot"><tr><td>
+<img class="floatshot" src="images/del-ask.png" alt="Confirm deletion" />
+<b>Remove a folder</b><br />
+Select a folder and click <b>Delete</b>. Confirm the prompt. <b>Select all</b> followed by <b>Delete</b> removes every imported folder. Deleting a folder also deletes measurement data and pictures that MMQ stored for it.
+</td></tr></table>
+<div class="fig-block"><img src="images/del-done.png" alt="Folder removed" /><div class="caption">Fig. 19. The animal list after a folder has been deleted.</div></div>
+<p>The next step is <a href="parameters.html">Parameters</a>, if mode, model and time are not set yet, then <a href="measure.html">Measurement</a>.</p>
+
+</div>
+      </div>
+    </div>
+    <div class="region-sidebar-second"><div>
+      <div id="block-figures">
+        <h2 class="title">Interface figures</h2>
+        <div class="content">
+          <div class="views-row"><div class="views-field-title"><a href="login.html">Log-in window</a></div><a href="login.html"><img src="images/login.png" width="220" alt="Log-in window" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="parameters.html">Main window</a></div><a href="parameters.html"><img src="images/main.png" width="220" alt="Main window" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="calibration.html">Colour calibration</a></div><a href="calibration.html"><img src="images/cal.png" width="220" alt="Colour calibration" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="measure.html">Marbling and fat</a></div><a href="measure.html"><img src="images/marbling.png" width="220" alt="Marbling and intramuscular fat" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="export.html">Exported table</a></div><a href="export.html"><img src="images/csv.png" width="220" alt="Exported CSV" /></a></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+<div id="footer">
+  <p style="text-align:center;">Multifunctional Meat Quality Determination Software (MMQ), Version 1.0. © 2025 Nanjing Agricultural University.</p>
+  <p style="text-align:center;">Developers, as named in the software manual: Ji Qiunan, Liu Zedan, Wan Ziming, Zhao Sanqin and Wu Wangjun.</p>
+  <p style="text-align:center;">Online marbling measurement is documented from <a href="https://yuwan589.github.io/PorkMS/">PorkMS</a>.</p>
+</div>
+<script src="js/site.js"></script>
+</body>
+</html>

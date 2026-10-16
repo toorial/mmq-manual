@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chicken | MMQ</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+<div id="header" class="clearfix">
+  <div id="logo-wrapper">
+    <h1 id="site-name"><a href="index.html" title="Home"><span>MMQ</span></a></h1>
+    <div id="site-slogan">for meat quality determination</div>
+  </div>
+  <nav id="menu">
+    <form class="search-block-form container-inline" action="search.html" method="get" id="search">
+      <div class="form-item">
+        <label for="edit-keys">Search this site:</label>
+        <input title="Enter the terms you wish to search for." type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
+      </div>
+      <input type="submit" id="edit-submit" value="Search" class="form-submit" />
+    </form>
+  </nav>
+</div>
+<div class="with-both-sidebars">
+  <div class="layout-columns clearfix">
+    <div class="region-sidebar-first"><div>
+      <nav id="block-mmq">
+        <h2>MMQ</h2>
+        <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="porkms.html">PorkMS</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="imaging.html">Taking images</a></li>
+<li><a href="help.html">Help</a></li>
+</ul>
+      </nav>
+      <nav id="block-manual">
+        <h2>Manual</h2>
+        <ul>
+<li><a href="login.html">Log in</a></li>
+<li><a href="parameters.html">Parameters</a></li>
+<li><a href="calibration.html">Calibration</a></li>
+<li><a href="measure.html">Measurement</a></li>
+<li><a href="export.html">Export</a></li>
+</ul>
+      </nav>
+      <nav id="block-species">
+        <h2>Species</h2>
+        <ul>
+<li class="leaf"><a href="pig.html">Pig (1)</a></li>
+<li class="leaf"><a href="cattle.html">Cattle (1)</a></li>
+<li class="leaf"><a href="sheep.html">Sheep (1)</a></li>
+<li class="leaf"><a href="chicken.html" class="active">Chicken (1)</a></li>
+</ul>
+      </nav>
+      <div id="block-user">
+        <h2 class="title">User login</h2>
+        <div class="content">
+          <form class="user-login-form" id="user-login-form" action="#" method="post">
+            <div class="form-item">
+              <label for="edit-name" class="form-required">Username</label><br />
+              <input class="form-text" type="text" id="edit-name" name="name" size="15" maxlength="60" required="required" />
+            </div>
+            <div class="form-item">
+              <label for="edit-pass" class="form-required">Password</label><br />
+              <input class="form-text" type="password" id="edit-pass" name="pass" size="15" maxlength="128" required="required" />
+            </div>
+            <div class="form-actions">
+              <input type="submit" value="Log in" class="form-submit" />
+            </div>
+          </form>
+          <ul class="sidebar-extra"><li><a href="login.html#recover" title="How password recovery works in the desktop software.">Reset your password</a></li></ul>
+          <div id="login-msg"></div>
+        </div>
+      </div>
+    </div></div>
+    <div id="main">
+      
+      <div class="inner">
+        <a id="main-content"></a>
+        <div class="breadcrumb"><a href="index.html">Home</a></div>
+        <h1><span>Chicken</span></h1>
+<div class="page-body">
+
+<div class="tax"><div>Species</div><div><a href="chicken.html">Chicken</a></div></div>
+
+<p>Chicken is selected from <b>Menu File</b>. Use the same folder layout: one animal in each folder, with the images MMQ will preview. Colour values L*, a* and b* are still the values the desktop program calculates for a loaded image.</p>
+<p>Intramuscular-fat and marbling wording in the manual is written around pork. Treat a chicken result with that limit in mind, and do not grade chicken fillets with PorkMS.</p>
+
+<p>Set the species with <b>Menu File</b> before you create the information template. The steps after that are in <a href="imaging.html">Taking images</a>, <a href="parameters.html">Parameters</a> and <a href="measure.html">Measurement</a>.</p>
+
+</div>
+      </div>
+    </div>
+    <div class="region-sidebar-second"><div>
+      <div id="block-figures">
+        <h2 class="title">Interface figures</h2>
+        <div class="content">
+          <div class="views-row"><div class="views-field-title"><a href="login.html">Log-in window</a></div><a href="login.html"><img src="images/login.png" width="220" alt="Log-in window" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="parameters.html">Main window</a></div><a href="parameters.html"><img src="images/main.png" width="220" alt="Main window" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="calibration.html">Colour calibration</a></div><a href="calibration.html"><img src="images/cal.png" width="220" alt="Colour calibration" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="measure.html">Marbling and fat</a></div><a href="measure.html"><img src="images/marbling.png" width="220" alt="Marbling and intramuscular fat" /></a></div>
+          <div class="views-row"><div class="views-field-title"><a href="export.html">Exported table</a></div><a href="export.html"><img src="images/csv.png" width="220" alt="Exported CSV" /></a></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+<div id="footer">
+  <p style="text-align:center;">Multifunctional Meat Quality Determination Software (MMQ), Version 1.0. © 2025 Nanjing Agricultural University.</p>
+  <p style="text-align:center;">Developers, as named in the software manual: Ji Qiunan, Liu Zedan, Wan Ziming, Zhao Sanqin and Wu Wangjun.</p>
+  <p style="text-align:center;">Online marbling measurement is documented from <a href="https://yuwan589.github.io/PorkMS/">PorkMS</a>.</p>
+</div>
+<script src="js/site.js"></script>
+</body>
+</html>
