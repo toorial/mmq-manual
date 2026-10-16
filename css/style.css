@@ -115,6 +115,7 @@ img.floatshot {
 }
 .fig-block { margin: 0.7em 0 1em; clear: both; }
 .fig-block img { display: block; margin: 0 auto; border: 1px solid #cccccc; background: #fff; }
+img.fig-cal { max-width: 320px; }
 .caption { color: #777777; font-size: 0.85em; text-align: center; margin: 0.25em 0 0.15em; }
 table.grade { width: 100%; border-collapse: collapse; margin: 0.5em 0 1em; }
 table.grade th {
