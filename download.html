@@ -31,7 +31,6 @@
         <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
-<li><a href="porkms.html">PorkMS</a></li>
 <li><a href="download.html" class="active">Download</a></li>
 <li><a href="imaging.html">Taking images</a></li>
 <li><a href="help.html">Help</a></li>
@@ -105,6 +104,112 @@ The PDF file is in Chinese.</p>
 <p>64-bit Windows 10 or Windows 11.</p>
 <div class="note">The program writes templates to <b>D:\Meat_Quality_Templates</b> and exported tables to <b>D:\Meat_Quality_Output</b>. If those folders are missing, the program creates them on drive D:.</div>
 
+<div class="porkms" id="porkms">
+<h2>Pork marbling measurement</h2>
+<p><b>PorkMS</b> (Pork Marbling Measurement System) estimates the fat area ratio on a pork muscle cross-section and turns that ratio into a marbling grade. This grade is not the NPPC 6-point marbling score used by the <a href="parameters.html">MMQ desktop program</a>. Use the tool below for the fat-ratio grade. Use MMQ when you also need L*, a*, b*, an NPPC colour score and intramuscular fat.</p>
+<div class="note">Analysis runs in this browser. Images and numbers are not uploaded. This visit allows 100 successful measurements (<b><span id="quotaLeft">100</span> left</b>). Refreshing the page resets the count and clears the history. Loading a file without starting a measurement does not use a trial.</div>
+
+<h2>Animal measurement info</h2>
+<p>The form is optional. It does not change the image analysis. Anything you type is included in the exported CSV.</p>
+<table class="fields">
+  <tr>
+    <th>Location</th>
+    <td><input type="text" id="location" /></td>
+    <th>Operator</th>
+    <td><input type="text" id="operator" /></td>
+  </tr>
+  <tr>
+    <th>Breed</th>
+    <td><input type="text" id="breed" /></td>
+    <th>Gender</th>
+    <td>
+      <select id="gender">
+        <option value="">Select</option>
+        <option value="Boar">Boar</option>
+        <option value="Sow">Sow</option>
+        <option value="Barrow">Barrow</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <td colspan="3"><input type="date" id="testDate" /></td>
+  </tr>
+</table>
+
+<h2>Standard test images</h2>
+<p>These six reference pictures cover grades 1 to 6. <b>Analyze</b> under a picture runs that picture and adds a history row.</p>
+<div class="porkms-grid" id="testImagesGrid">
+  <div class="porkms-card test-image-item" data-grade="1">
+    <img src="images/porkms/test_1.jpeg" alt="Grade 1 reference" />
+    <div class="caption">Grade 1</div>
+    <button type="button" class="form-submit" id="btnTest1" onclick="analyzeTestImage(1)"><span class="spinner"></span>Analyze</button>
+  </div>
+  <div class="porkms-card test-image-item" data-grade="2">
+    <img src="images/porkms/test_2.jpeg" alt="Grade 2 reference" />
+    <div class="caption">Grade 2</div>
+    <button type="button" class="form-submit" id="btnTest2" onclick="analyzeTestImage(2)"><span class="spinner"></span>Analyze</button>
+  </div>
+  <div class="porkms-card test-image-item" data-grade="3">
+    <img src="images/porkms/test_3.jpeg" alt="Grade 3 reference" />
+    <div class="caption">Grade 3</div>
+    <button type="button" class="form-submit" id="btnTest3" onclick="analyzeTestImage(3)"><span class="spinner"></span>Analyze</button>
+  </div>
+  <div class="porkms-card test-image-item" data-grade="4">
+    <img src="images/porkms/test_4.jpeg" alt="Grade 4 reference" />
+    <div class="caption">Grade 4</div>
+    <button type="button" class="form-submit" id="btnTest4" onclick="analyzeTestImage(4)"><span class="spinner"></span>Analyze</button>
+  </div>
+  <div class="porkms-card test-image-item" data-grade="5">
+    <img src="images/porkms/test_5.jpeg" alt="Grade 5 reference" />
+    <div class="caption">Grade 5</div>
+    <button type="button" class="form-submit" id="btnTest5" onclick="analyzeTestImage(5)"><span class="spinner"></span>Analyze</button>
+  </div>
+  <div class="porkms-card test-image-item" data-grade="6">
+    <img src="images/porkms/test_6.jpeg" alt="Grade 6 reference" />
+    <div class="caption">Grade 6</div>
+    <button type="button" class="form-submit" id="btnTest6" onclick="analyzeTestImage(6)"><span class="spinner"></span>Analyze</button>
+  </div>
+</div>
+
+<h2>Measure one image</h2>
+<p>Click the box or drop a JPG or PNG file into it. A preview appears. <b>×</b> removes the file. <b>Start measurement</b> uses one trial when the analysis succeeds.</p>
+<div class="drop-zone" id="dropZone1" onclick="document.getElementById('fileInput1').click()">
+  <p class="drop-hint">Click or drag an image here</p>
+  <p class="drop-hint">JPG or PNG</p>
+  <button type="button" class="remove-btn" onclick="removeImage(event)">×</button>
+</div>
+<input type="file" id="fileInput1" class="hidden-input" accept="image/*" />
+<p><button type="button" class="form-submit" id="analyzeBtn1" onclick="analyzeImage()" disabled="disabled"><span class="spinner"></span>Start measurement</button></p>
+
+<h2>Measurement history</h2>
+<p>Each row shows the time, the original image, the marked image, the fat ratio and the marbling grade. Green regions on the marked image are fat found by the page. The rest is the muscle region kept after preprocessing.</p>
+<div class="history-actions">
+  <button type="button" class="form-submit" onclick="exportAllResults()">Export all as CSV</button>
+  <button type="button" class="form-submit" onclick="clearAllHistory()">Clear all results</button>
+</div>
+<div id="historyBody">
+  <div class="history-empty" id="historyEmpty">No measurement records yet. Import an image and start measuring.</div>
+</div>
+
+<h2>Marbling grades</h2>
+<p>The grade follows the fat area ratio on the muscle cross-section.</p>
+<table class="grade">
+  <tr><th>Grade</th><th>Fat area ratio</th><th>Description</th></tr>
+  <tr class="odd"><td>1</td><td>≤ 0.275%</td><td>No marbling, extremely low fat</td></tr>
+  <tr class="even"><td>2</td><td>0.275% – 2.284%</td><td>Trace marbling</td></tr>
+  <tr class="odd"><td>3</td><td>2.284% – 5.902%</td><td>Slight marbling</td></tr>
+  <tr class="even"><td>4</td><td>5.902% – 8.703%</td><td>Moderate marbling</td></tr>
+  <tr class="odd"><td>5</td><td>8.703% – 12.464%</td><td>Medium marbling</td></tr>
+  <tr class="even"><td>6</td><td>12.464% – 18.045%</td><td>Modestly abundant marbling</td></tr>
+  <tr class="odd"><td>7</td><td>18.045% – 23.508%</td><td>Abundant marbling</td></tr>
+  <tr class="even"><td>8</td><td>23.508% – 28.232%</td><td>Highly abundant marbling</td></tr>
+  <tr class="odd"><td>9</td><td>28.232% – 33.355%</td><td>Extremely abundant marbling</td></tr>
+  <tr class="even"><td>10+</td><td>&gt; 33.355%</td><td>Super abundant marbling</td></tr>
+</table>
+<p>The page separates the sample with Otsu thresholding, filters it in Lab colour space, and uses connected components to keep a valid muscle region. Fat particles are then taken from block-normalised brightness. Desktop colour calibration, folder batching and IMF stay in <a href="help.html">How to use MMQ</a>.</p>
+</div>
+
 </div>
       </div>
     </div>
@@ -125,8 +230,9 @@ The PDF file is in Chinese.</p>
 <div id="footer">
   <p style="text-align:center;">Multifunctional Meat Quality Determination Software (MMQ), Version 1.0. © 2025 Nanjing Agricultural University.</p>
   <p style="text-align:center;">Developers, as named in the software manual: Ji Qiunan, Liu Zedan, Wan Ziming, Zhao Sanqin and Wu Wangjun.</p>
-  <p style="text-align:center;">Online marbling measurement is documented from <a href="https://yuwan589.github.io/PorkMS/">PorkMS</a>.</p>
 </div>
 <script src="js/site.js"></script>
+<script src="js/porkms-samples.js"></script>
+<script src="js/porkms.js"></script>
 </body>
 </html>

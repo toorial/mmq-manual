@@ -147,6 +147,109 @@ mark { background: #fff3a0; }
   width: 1px;
   height: 1px;
 }
+.porkms h2 { clear: both; }
+.porkms .fields input,
+.porkms .fields select {
+  border: 1px solid #336699;
+  font: inherit;
+  padding: 0.15em 0.35em;
+  width: 12em;
+  max-width: 100%;
+  background: #ffffff;
+}
+.porkms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.7em;
+  margin: 0.4em 0 1em;
+}
+.porkms-card {
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  padding: 0.4em 0.4em 0.55em;
+  text-align: center;
+}
+.porkms-card img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  margin: 0 auto 0.35em;
+}
+.porkms-card .caption { margin-bottom: 0.35em; }
+.porkms .drop-zone {
+  border: 2px dashed #6699cc;
+  background: #f7f7f7;
+  min-height: 160px;
+  max-width: 280px;
+  margin: 0.3em 0 0.7em;
+  padding: 0.8em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.porkms .drop-zone.dragover,
+.porkms .drop-zone:hover { background: #eef5fb; border-color: #336699; }
+.porkms .drop-zone.has-image { border-style: solid; padding: 0.4em; }
+.porkms .drop-zone .preview-img { display: block; max-height: 220px; margin: 0 auto; border: 1px solid #cccccc; }
+.porkms .drop-hint { color: #555555; margin: 0.2em 0; }
+.porkms .remove-btn {
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: 1px solid #336699;
+  background: #efefef;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.35em;
+}
+.porkms .drop-zone.has-image .remove-btn { display: block; }
+.porkms .hidden-input { display: none; }
+.porkms .history-actions { margin: 0.3em 0 0.7em; }
+.porkms .history-actions .form-submit { margin-right: 0.4em; }
+.porkms .history-empty { color: #555555; margin: 0.4em 0 0.8em; }
+.porkms .history-item {
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  padding: 0.55em 0.7em 0.7em;
+  margin: 0 0 0.8em;
+}
+.porkms .history-card-title { font-weight: bold; color: #777777; margin-bottom: 0.35em; }
+.porkms .history-metrics { margin-bottom: 0.45em; }
+.porkms .history-metric { display: inline-block; margin-right: 1.4em; }
+.porkms .history-metric-label { color: #555555; font-size: 0.9em; }
+.porkms .history-metric-value { font-weight: bold; }
+.porkms .grade-badge { color: #336699; }
+.porkms .history-images-row { margin: 0.3em 0 0.55em; }
+.porkms .history-image-box { display: inline-block; vertical-align: top; margin: 0 0.8em 0.4em 0; text-align: center; }
+.porkms .history-thumb,
+.porkms .history-marked-thumb {
+  display: block;
+  max-width: 180px;
+  max-height: 180px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+}
+.porkms .history-image-label { color: #777777; font-size: 0.85em; margin-top: 0.2em; }
+.porkms button.done { color: #336699; font-weight: bold; }
+.porkms .spinner { display: none; }
+.porkms button.loading .spinner {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.3em;
+  border: 2px solid #6699cc;
+  border-top-color: transparent;
+  border-radius: 50%;
+  vertical-align: -0.1em;
+  animation: porkms-spin 0.7s linear infinite;
+}
+@keyframes porkms-spin { to { transform: rotate(360deg); } }
+
 @media (max-width: 960px) {
   body { min-width: 0; }
   .with-both-sidebars .layout-columns {
